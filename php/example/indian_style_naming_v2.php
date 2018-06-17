@@ -5,7 +5,6 @@ function proc_josa($ex) {
 		$pos = mb_strpos($ex, $pp);
 		if( $pos === false || $pos < 1 ) continue;
 		$ch = mb_substr($ex, $pos-1, 1);
-		if(!preg_match('/[가-힣]/',$ch)) continue;
 		$code = (ord($ch{0}) & 0x0F) << 12 | (ord($ch{1}) & 0x3F) << 6 | (ord($ch{2}) & 0x3F);
 		if( ( $code - 44032 ) % 28 == 0 ) $pp2 = mb_substr($pp ,2, 1);
 		else $pp2 = mb_substr($pp, 0, 1);
