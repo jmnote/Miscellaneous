@@ -1,6 +1,6 @@
 <?php
 function proc_josa($ex) {
-	$pps = ["이(가)","은(는)","을(를)","과(와)"];
+	$pps = ["은(는)","이(가)","을(를)","과(와)"];
 	foreach( $pps as $pp ) {
 		$ex = preg_replace_callback("/(.)".preg_quote($pp)."/u",
 			function($matches) use($pp) {
